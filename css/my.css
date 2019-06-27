@@ -1,0 +1,67 @@
+@media screen and (max-width:499px) {
+  div#map {
+    background-color: aqua;
+    height: 500px;
+  }
+
+  div#schedule {
+    background-color: aliceblue;
+    height: 500px;
+    text-align: center;
+  }
+  p {
+    font-size: 7px
+  }
+}
+
+@media screen and (min-width:500px) {
+  div#map {
+    background-color: aqua;
+    height: 700px;
+    width: 70%;
+    float: left;
+  }
+
+  div#schedule {
+    background-color: aliceblue;
+    height: 700px;
+    width: 30%;
+    float: right;
+    text-align: center;
+  }
+}
+
+div#gallery {
+  background-color: darkorange;
+  height: 340px;
+  clear: both;
+}
+
+div.article {
+  float: left;
+  width: 460px;
+  height: 320px;
+}
+
+img {
+  width: 460px;
+  height: 320px;
+}
+
+th.blog_date {
+  background-color: bisque;
+}
+
+th.blog_title {
+  background-color: white;
+}
+
+td.blog_date {
+  background-color: bisque;
+  text-align: left;
+}
+
+td.blog_title {
+  background-color: white;
+  text-align: left;
+}

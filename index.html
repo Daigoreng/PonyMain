@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ポニー号追跡システム（レスポンシブ）</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="css/my.css">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqanfe-UmXSw-DujWIivsmNFAj-OA5jZw&libraries=geometry"></script>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .td1 {
+    border: 1px solid gray;
+  }
+
+  .div1 {
+    display: inline;
+  }
+
+  .btn1 {
+    background-color: rgba( 180, 180, 255, 0.5);
+    border-bottom: 1px hidden #ffffff;
+    border-right: 1px hidden #ffffff;
+    border-left: 1px hidden #ffffff;
+    border-top: 1px solid #505050;
+    cursor: hand;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+</style>
+
+<body>
+  <div id="schedule">
+
+    <h2>MBCポニー号スケジュール</h2>
+    <h4>県内各地から生中継で旬の情報をお伝えします</h4>
+    <table id="tbl_blog" width="100%" hight="100%" border=1>
+      <tr>
+        <th rowspan=2>経路</th>
+        <th class="blog_date">日時</th>
+      </tr>
+      <tr>
+        <th class="blog_title">タイトル</th>
+      </tr>
+    </table>
+    <button id="bt_prev">前へ</button>
+    <button id="bt_next">次へ</button>
+  </div>
+
+  <div id="map">Map</div>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ポニー号追跡システム（レスポンシブ）</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="css/my.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+  <script type="text/javascript" src="js/search2.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqanfe-UmXSw-DujWIivsmNFAj-OA5jZw&libraries=geometry"></script>
+</head>
+<script>
+  //ページリロードと同時に右の表にデータが入ってくる
+  window.addEventListener('DOMContentLoaded', function() {
+    $.ajax({
+      url: 'arrive_data.php',
+      type: 'get',
+      datatype: 'json',
+      data: {},
+      timeout: 5000
+    }).done(function(data) {
+      console.log(data);
+      var info = JSON.parse(data);
+      for (var i in info) {
+        var title = info[i].blog_title;
+        var trace_info_time = info[i].trace_info_time;
+        var url = info[i].url;
+        $("button." + i + "_title").append(title);
+        $("td#" + i + "_time").append(trace_info_time);
+        var trace_info_time_parse = trace_info_time.replace(/[0-9]{2}:[0-9]{2}:[0-9]{2}/g, '');
+        $("button#list" + i + "-bt-start").attr('data-url', url);
+        $("button#list" + i + "-bt-start").attr('data-start_date', trace_info_time_parse);
+        $("button#list" + i + "-bt-start").attr('data-end_date', trace_info_time);
+        console.log(i);
+        console.log(trace_info_time);
+      }
+
+    }).fail(function() {
+      alert("失敗");
+    });
+
+  });
+
+</script>
+<body>
+  <div id="schedule">
+  
+   <h2>MBCポニー号スケジュール</h2>
+	 <h4>県内各地から生中継で旬の情報をお伝えします</h4>
+					<table border="1",width="100%",hight="100%">
+							<tr>
+								<td id="0_time",width="30%"></td>
+								<td width="70%">
+									<p class="r_title">モーニングスマイル</p><button id="list0-bt-start" class="0_title" , data-start_date="" data-end_date="" url=""></button></td>
+								<tr>
+									<td id="1_time"></td>
+									<td>
+										<p class="r_title">モーニングスマイル</p><button id="list1-bt-start" class="1_title" data-start_date="" data-end_date=""></button></td>
+								</tr>
+
+							</tr>
+							<tr>
+								<td id="2_time"></td>
+								<td>
+									<p class="r_title">モーニングスマイル</p><button id="list2-bt-start" class="2_title" data-start_date="" data-end_date=""></button></td>
+							</tr>
+							<tr>
+								<td id="3_time"></td>
+								<td>
+									<p class="r_title">モーニングスマイル</p><button id="list3-bt-start" class="3_title" data-start_date="" data-end_date=""></button></td>
+							</tr>
+
+							<tr>
+								<td id="4_time"></td>
+								<td>
+									<p class="r_title">モーニングスマイル</p><button id="list4-bt-start" class="4_title" data-start_date="" data-end_date=""></button></td>
+							</tr>
+					</table>
+
+   </div>
+
+  <div id="map">Map</div>
+  <div id="gallery">
+  <div class="slider articles">
+    <div class="article">
+      <h3><img src="images/gallery/001.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/002.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/003.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/004.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/005.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/006.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/007.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/008.jpg"></h3>
+    </div>
+    <div class="article">
+      <h3><img src="images/gallery/009.jpg"></h3>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -5,6 +5,7 @@
   }
 
   div#schedule {
+    position: relative;
     background-color: aliceblue;
     height: 500px;
     text-align: center;
@@ -23,6 +24,7 @@
   }
 
   div#schedule {
+    position: relative;
     background-color: aliceblue;
     height: 700px;
     width: 30%;
@@ -42,6 +44,14 @@ div.article {
   width: 460px;
   height: 320px;
 }
+
+div#button{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
 
 img {
   width: 460px;

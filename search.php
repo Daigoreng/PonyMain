@@ -11,7 +11,7 @@
 
   $info=trace_info_select("where time_stamp>='".$start_date."' and time_stamp<='".$end_date."' and stat=2","order by time_stamp desc limit 1");
   if(count($info)>0){
-    $start_date=$info[0]->time;
+    $start_date=$info[0]->time_stamp;
   }
   $info=trace_info_select("where time_stamp>='".$start_date."' and time_stamp<='".$end_date."'","order by time_stamp asc");
   echo json_encode($info,JSON_UNESCAPED_UNICODE);
